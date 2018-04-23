@@ -7,6 +7,8 @@ public class Shooting : MonoBehaviour
     public int max_ammo;
     public float fire_frequency;
     public float reloadtime;
+    public GameObject bullet;
+    public Transform gunBarrel;
 
     private int current_ammo;
     private bool reloading;
@@ -22,6 +24,7 @@ public class Shooting : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Mouse0) && !cooldown && current_ammo > 0)
         {
+            Instantiate(bullet, gunBarrel.position, gunBarrel.rotation);
             current_ammo = current_ammo - 1;
             cooldown = true;
             print(current_ammo);
