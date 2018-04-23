@@ -19,4 +19,8 @@ public class CameraC : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, player.position + offset, ref velocity, speed);
     }
 
+     
+    
+        
+    
 }
