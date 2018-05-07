@@ -5,11 +5,16 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int max_health;
+    //Attributes
+   [HideInInspector]
+    public bool isDead;
 
+    Animator animator;
     private int currentHealth;
 
     private void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         ResetHealth();
     }
 
@@ -30,6 +35,8 @@ public class Health : MonoBehaviour
 
     private void Death()
     {
-        Destroy(gameObject);
+        animator.SetBool("IsDead", true);
+        isDead = true;
+        Destroy(gameObject, 5f);
     }
 }
