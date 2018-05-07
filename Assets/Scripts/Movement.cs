@@ -6,11 +6,16 @@ public class Movement : MonoBehaviour
 {
     public float speed;
     public LayerMask groundlayer;
-    public Animator animator;
+    Animator animator;
 
     private float x;
     private float y;
     private Vector3 direction;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
 
     void Update()
     {
